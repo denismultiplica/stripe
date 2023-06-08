@@ -1,0 +1,14 @@
+---
+import Sponsor from "./Sponsor.astro";
+import { sponsors } from "../data/sponsors.js"
+---
+
+<ul>
+  {
+    sponsors.map(({name, url, svg}) => (
+      <li>
+        <Sponsor name={name} href={url} svg={svg} />
+      </li>
+    ))
+  }
+</ul>

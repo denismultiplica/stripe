@@ -1,0 +1,32 @@
+---
+const { center } = Astro.props;
+
+const classes =
+  "flex flex-wrap gap-4 text-dark [&>li]:uppercase [&>li]:tracking-widest [&>li]:font-semibold";
+---
+
+<ul
+  class={[classes, `${center ? "justify-center" : "justify-start"}`].join(" ")}
+>
+  <li>
+    <ul class="flex gap-4">
+      <li>May 3</li>
+      <li>
+        <span class="block w-[2px] h-full bg-[hsl(var(--start))]"></span>
+      </li>
+      <li>In Person</li>
+    </ul>
+  </li>
+  <li>
+    <span class="block w-[2px] h-full bg-[hsl(var(--end))]"></span>
+  </li>
+  <li>
+    <ul class="flex gap-4">
+      <li>San Francisco</li>
+      <li>
+        <span class="block w-[2px] h-full bg-[hsl(var(--end))]"></span>
+      </li>
+      <li>Pier 48</li>
+    </ul>
+  </li>
+</ul>

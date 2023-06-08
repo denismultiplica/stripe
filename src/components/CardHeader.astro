@@ -1,0 +1,11 @@
+---
+import Subtitle from "../components/Subtitle.astro";
+import Title from "../components/Title.astro";
+
+const { subtitle, title, white } = Astro.props;
+---
+
+<header class="grid gap-4 pr-[15%]">
+  {subtitle && <Subtitle text={subtitle} />}
+  <Title primary white={white ? true : false} text={title} />
+</header>

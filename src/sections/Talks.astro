@@ -1,0 +1,48 @@
+---
+import Card from "../components/Card.astro";
+import CardHeader from "../components/CardHeader.astro";
+import Talk from "../components/Talk.astro";
+import Container from "../layouts/Container.astro";
+import { talks } from "../data/talks.js";
+---
+
+<section id="talks" class="mb-5">
+  <Container cols="lg:grid-cols-2">
+    <div class="">
+      <Card
+        background="https://images.ctfassets.net/fzn2n1nzq965/35HgX5Mcrlm9WI30kYHwls/47a5fed2b409f8367f1822be45808cd6/talks.jpg?q=60&w=1180"
+        modifier="min-h-[32rem] lg:h-full lg:max-h-[calc(100vh-6rem)] sticky top-20"
+      >
+        <CardHeader subtitle="Talks" title="Join the conversation" />
+      </Card>
+    </div>
+
+    <Card>
+      {
+        talks.map(({ time, location, type, title, description }) => (
+          <Talk
+            time={time}
+            location={location}
+            type={type}
+            title={title}
+            description={description}
+          />
+        ))
+      }
+    </Card>
+  </Container>
+</section>
+<section id="talks" class="mb-5">
+  <Container>
+    <Card
+      dark
+      background="https://images.ctfassets.net/fzn2n1nzq965/7DuIfPARf5wZkULVKnXIxr/b7262f2c17818839a044e2879bfe7e12/audience.jpg?q=60&w=2400"
+      modifier="min-h-[32rem]"
+    >
+      <CardHeader
+        white
+        title="An interactive conference about Stripe and the future of the internet economy"
+      />
+    </Card>
+  </Container>
+</section>

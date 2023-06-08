@@ -1,0 +1,15 @@
+---
+const { name, url, svg } = Astro.props;
+---
+
+<a
+  class="relative flex items-center justify-center bg-light overflow-hidden rounded-lg aspect-[4/3] [&>svg]:w-10/12 [&>span]:hover:w-full"
+  href={url}
+  title={name}
+  target="_blank"
+  set:html={svg}
+>
+  <span
+    class="block absolute left-0 bottom-0 w-0 h-1.5 transition-all duration-500 [background-image:var(--text-gradient)]"
+  ></span>
+</a>

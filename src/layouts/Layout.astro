@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --start: 281, 97%, 62%;
+    --end: 319, 100%, 68%;
+    --dark: 0, 0%, 35%;
+    --button-gradient: linear-gradient(
+      50.97deg,
+      hsl(var(--start)) -19.81%,
+      hsl(var(--end)) 57.52%
+    );
+    --text-gradient: linear-gradient(
+      243.56deg,
+      hsl(var(--end)) 45.47%,
+      hsl(var(--start)) 101.68%
+    );
+    --card-gradient: linear-gradient(
+      270deg,
+      hsl(var(--end)) 43.92%,
+      hsl(var(--start))
+    );
+    --dark-gradient: linear-gradient(
+      90deg,
+      hsl(var(--start)) 0%,
+      hsl(var(--end)) 9%,
+      hsl(var(--end)) 12%,
+      hsl(var(--dark)) 35%
+    );
+    --overlay-gradient: linear-gradient(
+      155.79deg,
+      hsla(0, 0%, 100%, 0.9),
+      hsla(0, 0%, 100%, 0) 62.7%
+    );
+  }
+  html {
+    font-family: "sohne-var", "Helvetica Neue", "Arial", sans-serif;
+    @apply text-gray scroll-smooth;
+  }
+  body {
+    @apply bg-light;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h4,
+  h5,
+  h6 {
+    @apply text-black;
+  }
+</style>
+
+<script src="../js/main.js"></script>

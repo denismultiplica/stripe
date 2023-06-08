@@ -1,0 +1,16 @@
+---
+const { text, primary, white } = Astro.props;
+const primaryClasses = "text-4xl md:text-6xl font-semibold";
+---
+
+{
+  primary ? (
+    <h2 class={[primaryClasses, `${white ? "text-white" : ""}`].join(" ")}>
+      {text}
+    </h2>
+  ) : (
+    <h3 class="text-3xl md:text-4xl font-semibold bg-clip-text text-transparent [background-image:var(--text-gradient)]">
+      {text}
+    </h3>
+  )
+}

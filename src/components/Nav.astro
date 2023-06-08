@@ -1,0 +1,28 @@
+---
+const { dark } = Astro.props;
+
+const classes =
+  "hidden md:flex items-center [&>li>a]:font-semibold [&>li>a]:inline-block [&>li>a]:py-1.5 [&>li>a]:px-5 [&>li>a]:text-sm [&>li>a]:transition-all [&>li>a]:duration-300 hover:[&>li>a]:opacity-75";
+---
+
+<nav>
+  <ul
+    class={[
+      classes,
+      `${dark ? "[&>li>a]:text-dark" : "[&>li>a]:text-white"}`,
+    ].join(" ")}
+  >
+    <li>
+      <a class="js-scroll" data-target="info" href="#info">Info</a>
+    </li>
+    <li>
+      <a class="js-scroll" data-target="talks" href="#talks">Talks</a>
+    </li>
+    <li>
+      <a class="js-scroll" data-target="speakers" href="#">Speakers</a>
+    </li>
+    <li>
+      <a class="js-scroll" data-target="sponsors" href="#">Sponsors</a>
+    </li>
+  </ul>
+</nav>

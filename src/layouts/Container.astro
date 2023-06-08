@@ -1,0 +1,8 @@
+---
+const { cols } = Astro.props;
+const classes = "max-w-7xl px-4 mx-auto";
+---
+
+<div class={[classes, `${cols ? `grid ${cols} gap-5` : ""}`].join(" ")}>
+  <slot />
+</div>

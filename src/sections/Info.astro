@@ -1,0 +1,41 @@
+---
+import Card from "../components/Card.astro";
+import CardHeader from "../components/CardHeader.astro";
+import Carousel from "../components/Carousel.astro";
+import Container from "../layouts/Container.astro";
+import Countdown from "../components/Countdown.astro";
+---
+
+<section id="info" class="mb-5">
+  <Container cols="lg:grid-cols-2">
+    <Card>
+      <CardHeader
+        subtitle="Event overview"
+        title="A single day, a year’s worth of impact"
+      />
+      <p class="text-lg">
+        Stripe Sessions brings together business leaders and builders to discuss
+        the most important internet economy trends. This year, we’re focused on
+        the many ways businesses can continue to accelerate progress in times of
+        change.
+      </p>
+
+      <Carousel/>
+    </Card>
+
+    <Card
+      background="https://images.ctfassets.net/fzn2n1nzq965/qN9ZemGXDJvjCrECJodoQ/3730d23deee6d684260b7ca1aecc977a/pier-48.jpg?q=60&w=1180"
+      modifier="min-h-[32rem]"
+    >
+      <CardHeader subtitle="San Francisco" title="Meet us at Pier 48" />
+    </Card>
+  </Container>
+</section>
+
+<section class="mb-5">
+  <Container>
+    <Card modifier="[background-image:var(--dark-gradient)]">
+      <Countdown countdownFinish="08/16/2023" />
+    </Card>
+  </Container>
+</section>

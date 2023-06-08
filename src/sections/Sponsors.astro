@@ -1,0 +1,43 @@
+---
+import Card from "../components/Card.astro";
+import CardHeader from "../components/CardHeader.astro";
+import Container from "../layouts/Container.astro";
+import Sponsor from "../components/Sponsor.astro";
+import { sponsors } from "../data/sponsors.js";
+import DateLocation from "../components/DateLocation.astro";
+import Button from "../components/Button.astro";
+---
+
+<section id="sponsors" class="mb-20">
+  <Container>
+    <Card>
+      <CardHeader title="Meet our Sessions partners" />
+
+      <ul
+        class="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-1"
+      >
+        {
+          sponsors.map(({ name, url, svg }) => (
+            <li>
+              <Sponsor name={name} url={url} svg={svg} />
+            </li>
+          ))
+        }
+      </ul>
+    </Card>
+  </Container>
+</section>
+
+<section class="mb-20">
+  <Container>
+    <Card dark>
+      <CardHeader title="Save your spot" />
+      <div>
+        <DateLocation />
+      </div>
+      <div>
+        <Button primary href="#" label="Watch the keynote" />
+      </div>
+    </Card>
+  </Container>
+</section>

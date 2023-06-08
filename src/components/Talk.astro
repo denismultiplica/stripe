@@ -1,0 +1,26 @@
+---
+import Subtitle from "./Subtitle.astro";
+import Title from "./Title.astro";
+
+const { time, location, type, title, description } = Astro.props;
+---
+
+<article
+  class="grid gap-6 pb-8 last-of-type:pb-0 border-b border-light last-of-type:border-none"
+>
+  <header class="grid gap-4">
+    <ul class="flex flex-wrap gap-1">
+      <li>
+        <Subtitle box text={time} />
+      </li>
+      <li>
+        <Subtitle box text={location} />
+      </li>
+      <li>
+        <Subtitle box text={type} />
+      </li>
+    </ul>
+    <Title text={title} />
+  </header>
+  <p>{description}</p>
+</article>

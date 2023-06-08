@@ -1,0 +1,35 @@
+---
+const { background, dark, modifier } = Astro.props;
+const classes = "relative overflow-hidden rounded-3xl p-6 sm:p-14";
+---
+
+<article
+  class={[
+    classes,
+    `${modifier && modifier}`,
+    `${dark ? "bg-light" : "bg-white"}`,
+  ].join(" ")}
+>
+  {
+    background && (
+      <>
+        <picture class="absolute inset-0 overflow-hidden">
+          <img
+            class="w-full h-full object-cover"
+            src={background}
+            loading="lazy"
+          />
+        </picture>
+        {dark ? (
+          ""
+        ) : (
+          <div class="absolute inset-0 [background-image:var(--overlay-gradient)]" />
+        )}
+      </>
+    )
+  }
+
+  <div class="relative grid gap-8">
+    <slot />
+  </div>
+</article>

@@ -1,0 +1,18 @@
+---
+const { text, box, white } = Astro.props;
+
+const classes = "font-bold tracking-widest uppercase";
+const gradienteClasses =
+  "[&>span]:bg-clip-text [&>span]:text-transparent [&>span]:[background-image:var(--text-gradient)]";
+const boxClasses = "text-sm py-1.5 px-3 bg-light rounded-md";
+---
+
+<h4
+  class={[
+    classes,
+    `${box ? boxClasses : ""}`,
+    `${white ? "text-white text-sm" : gradienteClasses}`,
+  ].join(" ")}
+>
+  <span>{text}</span>
+</h4>

@@ -1,0 +1,37 @@
+---
+const { countdownFinish } = Astro.props;
+---
+
+<div
+  id="countdown"
+  class="flex flex-col md:flex-row md:items-start gap-5 md:gap-14"
+  data-countdown-finish={countdownFinish}
+>
+  <h3
+    class="flex-grow tracking-widest pb-4 md:pt-5 text-white uppercase border-b border-white"
+  >
+    See you in
+  </h3>
+  <div class="flex-grow">
+    <ul
+      class="flex justify-between gap-4 text-white font-semibold uppercase [&>li]:flex [&>li]:flex-col [&>li]:items-center [&>li]:w-14 xs:[&>li]:w-16 sm:[&>li]:w-20 lg:[&>li]:w-32 xl:[&>li]:w-40"
+    >
+      <li>
+        <span id="days" class="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl xl:text-9xl">00</span>
+        <span class="text-xs md:text-sm tracking-wide">Days</span>
+      </li>
+      <li>
+        <span id="hours" class="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl xl:text-9xl">00</span>
+        <span class="text-xs md:text-sm tracking-wide">Hours</span>
+      </li>
+      <li>
+        <span id="minutes" class="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl xl:text-9xl">00</span>
+        <span class="text-xs md:text-sm tracking-wide">Minutes</span>
+      </li>
+      <li>
+        <span id="seconds" class="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl xl:text-9xl">00</span>
+        <span class="text-xs md:text-sm tracking-wide">Seconds</span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+import Card from "./Card.astro";
+import Subtitle from "./Subtitle.astro";
+
+const { icon, title, text } = Astro.props;
+---
+
+<Card
+  modifier="sm:p-6 max-w-md mx-auto rounded-2xl h-[var(--carousel-card-height)] [background-image:var(--card-gradient)]"
+>
+  <div class="flex gap-5">
+    <div class="pr-4 border-r border-white/30" set:html={icon} />
+    <div class="flex-grow grid gap-5">
+      <header>
+        <Subtitle white text={title} />
+      </header>
+      <p class="text-white">{text}</p>
+    </div>
+  </div>
+</Card>

@@ -1,0 +1,16 @@
+---
+const { href, label, primary } = Astro.props;
+const classes =
+  "js-button inline-flex py-1.5 px-5 text-sm font-semibold rounded-md transition-all duration-300";
+const primaryClasses =
+  "text-white [background-image:var(--button-gradient)] opacity-90 hover:opacity-100";
+const secondaryClasses =
+  "bg-transparent hover:bg-white [&>span]:text-transparent [&>span]:bg-clip-text [&>span]:[background-image:var(--button-gradient)]";
+---
+
+<a
+  class={[classes, `${primary ? primaryClasses : secondaryClasses}`].join(" ")}
+  href={href}
+>
+  <span>{label}</span>
+</a>

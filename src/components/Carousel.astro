@@ -1,0 +1,31 @@
+---
+import CarouselItem from "./CarouselItem.astro";
+import { cardsInfo } from "../data/cards-info.js";
+---
+
+<div class="pt-10" style="--carousel-card-height: 200px">
+  <ul class="relative h-[var(--carousel-card-height)]">
+    {
+      cardsInfo.map(({icon, title, text}) => (
+        <li class="absolute inset-0 z-10">
+          <CarouselItem
+            icon={icon}
+            title={title}
+            text={text}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="flex justify-center gap-1 pt-5">
+    {
+      cardsInfo.map(() => (
+        <li>
+          <button class="w-6 h-6 flex items-center justify-center opacity-50">
+            <span class="block w-6 h-0.5 [background-image:var(--card-gradient)]"></span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</div>

@@ -1,0 +1,32 @@
+---
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+import Nav from "./Nav.astro";
+
+const { white } = Astro.props;
+
+const classes =
+  "fixed w-full flex items-center p-4 z-10 transition-all duration-300";
+const logoClasses =
+  "js-logo inline-block py-1.5 px-3 -ml-3 rounded-md transition-all duration-300";
+---
+
+<header
+  id="header"
+  class={[classes, `${white ? "bg-white" : "bg-transparent"}`].join(" ")}
+>
+  <div class="flex flex-grow basis-0">
+    <a
+      href="#"
+      class={[logoClasses, `${white ? "bg-transparent" : "bg-light"}`].join(
+        " "
+      )}
+    >
+      <Logo dark />
+    </a>
+  </div>
+  <Nav dark={white ? true : false} />
+  <div class="flex-grow basis-0 flex justify-end">
+    <Button primary={white ? true : false} href="#" label="Watch the keynote" />
+  </div>
+</header>
